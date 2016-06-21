@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    padding: 20px 0px;
+    /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+    background-image: url('../images/backgbottom.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom right;
+    background-size: 230px 230px; 
+}
+
+a { color: #00B7FF; }
+
+button {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.app-title h2{
+    padding: 7px 0px;
+    margin: 0;
+    font-style: italic;
+}
+
+.app-body { margin-top: 1em; }
+
+button[type="button"]:focus {
+ outline: none!important;
+}
+
+#canvas,#viewport {
+  background-color: white;
+  border: 1px solid;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px #ccc;
+  height: 30em;
+  overflow: hidden;
+   overflow-y: scroll;
+   overflow-x: scroll;
+}
+
+.list-group-item:first-child {
+  height: 4em;
+}
+
+#pickcolor, .color-picker {
+  display: none;
+}
+
+path:focus {
+  fill: pink;
+  stroke: red;
+  stroke-width: 1;
+}
+
+.color-wrapper {
+  position: relative;
+  width: 250px;
+  margin: 20px auto;
+}
+
+.color-wrapper p {
+  margin-bottom: 5px;
+}
+
+input.call-picker {
+  border: 1px solid #AAA;
+  color: #666;
+  text-transform: uppercase;
+  float: left;
+  outline: none;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 85px;
+}
+
+.color-picker {
+  width: 212px;
+  background: #F3F3F3;
+  height: auto;
+  padding: 5px;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 3px 1px #DDD;
+  position: absolute;
+  top: 3px;
+  right: 105%;
+}
+
+.color-holder {
+  background: #fff;
+  cursor: pointer;
+  border: 1px solid #AAA;
+  width: 100%;
+  height: 36px;
+  float: left;
+  margin-left: 0px;
+}
+
+.color-picker .color-item {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  list-style-type: none;
+  float: left;
+  margin: 2px;
+  border: 1px solid #DDD;
+}
+
+.color-picker .color-item:hover {
+  border: 1px solid #666;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=8);
+}
+
+#color-picker-mobile {
+    right: 55px;
+    top: -147px;
+}
+
+#mobile-nav {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    padding-right: 9px;
+}
+#mobile-nav .mobile-tool {  
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 42px;
+    font-size: 25px;
+    display: block;
+    float: right;
+    border-radius: 25px;
+    margin-top: -1px;
+}
+#mobile-nav .mobile-tool span {
+    margin-top: 8px;
+    color: black;
+}
+
+#mobile-nav #mobilenav-container { 
+    float: right; 
+    height: 43px; 
+    padding: 0;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 25px;
+    left: 14px;
+    background-color: #e6e6e6;
+}
+
+#mobile-nav #mobilenav-container.active {
+    border-radius: 25px 0 25px 25px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu {
+    float: left;
+    height: 41px;
+    padding: 8px 0;
+    padding-left: 7px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a{
+    height: 33px;
+    width: 33px;
+    padding : 7px 15px;
+    margin : 0 10px;
+    padding-top: 1px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a.mobile-menu-fill{
+    background-position: center center;
+    background-image: url(../images/fill-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a.mobile-menu-fill.active {
+    background-image: url(../images/fill-mobile-active.png);
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a.mobile-menu-erase{
+    background-position: center center;
+    background-image: url(../images/eraser-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a.mobile-menu-erase.active {
+    background-image: url(../images/eraser-mobile-active.png);
+}
+
+#mobile-nav #mobilenav-container #mobile-menu a.mobile-menu-undo{
+    background-position: center center;
+    background-image: url(../images/undo-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu .mobile-menu-pickcolor {
+    width : 30px;
+    float: right;
+    border: 2px solid;
+    height: 27px;
+    margin: 0 10px;
+}
+#mobile-nav #mobilenav-container #mobile-menu .mobile-menu-pickcolor #pickcolor-mobile,
+#mobile-nav #mobilenav-container #mobile-menu .mobile-menu-pickcolor #color-picker-mobile{
+    display: none;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu .mobile-menu-pickcolor .color-holder-mobile{
+    height: 23px;
+}
+
+#mobile-nav #mobilenav-container #mobile-menu .mobile-menu-pickcolor .color-picker-mobile {
+    right: 28px;
+    top: -145px;
+}
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize {
+    position: absolute;
+    width: 44px;
+    right: 9px;
+    height: 200px;
+    bottom: 42px;
+    background-color: #e6e6e6;
+    border-radius: 25px 25px 0 0;
+    border: 1px solid rgb(173, 173, 173);
+    border-bottom: transparent;
+    text-align: center;
+    font-size: 13px;
+}
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 40px;
+    padding: 0 5px;
+    margin: 0 auto;
+    height: 150px;
+    padding: 6px 0;
+    
+}
+
+/* Range Input stylying */
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range] { border: 1px solid transparent; }
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range]::-webkit-slider-runnable-track {
+  background: transparent;
+  width: 4px;
+  background: #4172b3;
+  -webkit-appearance: none;
+  border: 0;
+}
+
+/* IE Webwik input range */
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range]::-ms-track {
+  cursor: pointer;
+  background: #999;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower,
+input[type=range]:focus::-ms-fill-lower,
+input[type=range]::-ms-fill-upper,
+input[type=range]:focus::-ms-fill-upper{ background: #999; }
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range]::-ms-thumb {
+    border-radius: 25px;
+    -webkit-appearance: none;
+    width: 21px;
+    height: 21px;
+    background: #4172b3;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000; 
+}
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+  border: 2px solid #000000;
+  margin-top: -1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  margin-left: -9px;
+  width: 30px;
+}
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 21px;
+    height: 21px;
+    border-radius: 25px;
+    background: #4172b3;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+}
+
+/* End of Range Input stylying */
+
+#mobile-nav #mobilenav-container .mobile-menu-brushsize label {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.collapse.width {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: width 0.35s ease;
+  -moz-transition: width 0.35s ease;
+  -o-transition: width 0.35s ease;
+  transition: width 0.35s ease;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+.collapse {  transition: height 0.01s; }
+
+@media screen and (max-width: 991px) {
+    #mobile-nav {
+        display: block;
+    }
+    .brushtools-container {
+        display: none;
+    }
+    .color-picker {
+        width: 224px;
+        padding: 3px;
+        border: 1px solid #fff;
+    }
+    .color-picker .color-item {
+        width: 25px;
+        height: 25px;
+        margin: 1px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .app-title { display: none; }
+    
+    body { 
+        height: calc(100%); 
+        padding-top: 0px;
+    }
+    
+    #canvas { 
+        height: calc(100%);
+        min-height: 90vh;
+     }    
+}
+

@@ -1,11 +1,19 @@
 {
-  "name": "PaintJs",
-  "version": "0.0.0",
+  "name": "paint_js",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "test-browser": "open http://localhost:8080/webpack-dev-server/test"
   },
+   "keywords": ["paintjs", "webpack app", "nodejs app"],
+   "author": "andresftenjo",
+   "license": "ISC",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/andresftenjo/PaintJS.git"
+  },
+  "homepage": "https://github.com/andresftenjo/PaintJS",
   "devDependencies": {
     "chai": "^1.10.0",
     "css-loader": "^0.23.1",
@@ -13,7 +21,7 @@
     "mocha-loader": "^0.7.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.4.15",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {

@@ -23,7 +23,7 @@ Mobile / Desktop Paint App Developed in **JS**, **NodeJs**, **Jquery** and **Boo
 
 ## Installation
 
-	[$] npm install PaintJs
+	[$] npm install paint_js
 
 ## Output example
 
@@ -44,7 +44,7 @@ Mobile / Desktop Paint App Developed in **JS**, **NodeJs**, **Jquery** and **Boo
 
 - Just go to your project folder and run:
 
-		github_changelog_generator
+		[$] git clone https://github.com/andresftenjo/PaintJS.git
 
 -  Or, run this from anywhere:
     - `github_changelog_generator -u github_username -p github_project`
